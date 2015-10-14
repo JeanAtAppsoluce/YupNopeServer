@@ -14,7 +14,7 @@ app.post('/create_card', function (req, res) {
 
 	console.log("got createproject with nickname "+req.body.nickname+" res:"+req.body.message);
 	
-	res.send("nickname:"+nickname+"message:"+message);
+	res.send("YOU DID IT ! your nickname is'"+nickname+"'; the message:'"+message+"'");
 });
 
 app.listen(port, function () {});
