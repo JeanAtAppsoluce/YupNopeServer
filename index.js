@@ -10,7 +10,7 @@ db.once('open', function (callback) {
 	console.log("did connect to cards db");
 });
 
-var cardSchema = mongoose.schema({
+var cardSchema = mongoose.Schema({
 	owner: String,
 	message: String
 });
