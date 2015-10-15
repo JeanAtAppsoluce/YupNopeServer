@@ -37,18 +37,19 @@ app.post('/create_card', function (req, res) {
 
 	console.log("got createproject with owner "+owner+" res:"+message);
 
-	var card = new Card({
-		owner: owner,
-		message: message
-	});
+	// var card = new Card({
+	// 	owner: owner,
+	// 	message: message
+	// });
 
-	card.save(function (err, card) {
-		if (err) {
-			res.send("ERROR: " + err);
-		} else {
-			res.send("NEW PROJECT CREATED ! owner is'"+owner+"'; message is'"+message+"'");
-		}
-	});
+	res.send("RECEIVED PROJECT ! owner is'"+owner+"'; message is'"+message+"'");
+	// card.save(function (err, card) {
+	// 	if (err) {
+	// 		res.send("ERROR: " + err);
+	// 	} else {
+	// 		res.send("NEW PROJECT CREATED ! owner is'"+owner+"'; message is'"+message+"'");
+	// 	}
+	// });
 });
 
 app.post('/get_cards', function (req, res) {
