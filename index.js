@@ -56,7 +56,7 @@ app.param('owner', function (req, res, next, owner) {
 	console.log("defined owner", owner);
 	next();
 });
-app.get('/get_cards/:owner', function (req, res) {
+app.get('/get_cards:owner', function (req, res) {
 	var owner = req.params.owner;
 
 	var cards = Card.find({ owner: owner }),
