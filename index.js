@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 // var dbUrl = process.env.MONGOHQ_URL || 'mongodb://<dbuser>:<dbpassword>@ds039431.mongolab.com:39431/heroku_4nmklljt';
 
-mongoose.connect(process.env.MONGOLAB_URI = '/cards');
+mongoose.connect(process.env.MONGOLAB_URI + '/cards');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
