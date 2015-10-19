@@ -18,7 +18,7 @@ var cardSchema = mongoose.Schema({
 });
 
 cardSchema.methods.dummy = function () {
-	return "card created by " + this.owner + "\n" + "message :" + this.message + "\n\n";
+	return "\ncard created by " + this.owner + "\n" + "message :" + this.message + "\n";
 }
 
 var Card = mongoose.model('Card', cardSchema);
