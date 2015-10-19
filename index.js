@@ -72,8 +72,7 @@ app.get('/get_cards/:owner', function (req, res) {
 		responseText += '\ngot ' + cards.length + ' cards :';
 
 		for (var i = 0; i < cards.length; i++) {
-			var card = new Card(cards[i]);
-			responseText += card.dummy();
+			responseText += cards[i].dummy();
 		};
 
 		res.send(responseText);
