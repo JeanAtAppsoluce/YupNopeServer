@@ -1,10 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-
 var mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGOLAB_URI + '/cards');
-
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
@@ -21,7 +19,6 @@ cardSchema.methods.dummy = function () {
 }
 
 var Card = mongoose.model('Card', cardSchema);
-
 
 var app = express();
 
