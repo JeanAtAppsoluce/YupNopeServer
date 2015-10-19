@@ -2,7 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-// var dbUrl = process.env.MONGOHQ_URL || 'mongodb://<dbuser>:<dbpassword>@ds039431.mongolab.com:39431/heroku_4nmklljt';
 
 mongoose.connect(process.env.MONGOLAB_URI + '/cards');
 
@@ -42,7 +41,6 @@ app.post('/create_card', function (req, res) {
 		message: message
 	});
 
-	// res.send("RECEIVED PROJECT ! owner is'"+owner+"'; message is'"+message+"'");
 	card.save(function (err, card) {
 		if (err) {
 			res.send("ERROR: " + err);
