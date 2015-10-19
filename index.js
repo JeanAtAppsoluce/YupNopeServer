@@ -57,11 +57,10 @@ app.param('owner', function (req, res, next, owner) {
 	next();
 });
 app.get('/get_cards/:owner', function (req, res) {
-	console.log("asked get_gards for " + req.params.owner);
 	var owner = req.params.owner;
 
 	var cards = Card.find({ owner: owner }),
-		responseText = 'PROJECTS BY ' + owner + '\n';
+		responseText = 'PROJECTS BY ' + owner + '\ngot ' + cards.length + ' cards';
 
 	for (var i = cards.length - 1; i >= 0; i--) {
 		var card = cards[i];
