@@ -2,9 +2,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-var dbUrl = process.env.MONGOHQ_URL || 'mongodb://<dbuser>:<dbpassword>@ds039431.mongolab.com:39431/heroku_4nmklljt';
+// var dbUrl = process.env.MONGOHQ_URL || 'mongodb://<dbuser>:<dbpassword>@ds039431.mongolab.com:39431/heroku_4nmklljt';
 
-mongoose.connect(dbUrl = '/cards');
+mongoose.connect(MONGOLAB_URI = '/cards');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
