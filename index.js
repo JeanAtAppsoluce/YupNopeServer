@@ -17,7 +17,7 @@ var cardSchema = mongoose.Schema({
 	message: String
 });
 
-cardSchema.method.toString = function () {
+cardSchema.method.dummy = function () {
 	return "card created by " + this.owner + "\n" + "message :" + this.message + "\n\n";
 }
 
@@ -73,7 +73,7 @@ app.get('/get_cards/:owner', function (req, res) {
 
 		for (var i = 0; i < cards.length; i++) {
 			var card = new Card(cards[i]);
-			responseText += card.toString();
+			responseText += card.dummy();
 		};
 
 		res.send(responseText);
