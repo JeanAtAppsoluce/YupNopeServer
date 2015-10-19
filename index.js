@@ -69,7 +69,11 @@ app.get('/get_cards/:owner', function (req, res) {
 	};
 
 	Card.find({ 'owner': owner }, function (err, cards) {
-		responseText += '\ngot ' + cards.length + ' cards'
+		responseText += '\ngot ' + cards.length + ' cards :';
+
+		for (var i = 0; i < cards.length; i++) {
+			responseText += cards[i].toString();
+		};
 
 		res.send(responseText);
 	});
