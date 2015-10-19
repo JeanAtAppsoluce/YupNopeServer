@@ -60,7 +60,7 @@ app.get('/get_cards/:owner', function (req, res) {
 	var owner = req.params.owner;
 
 	var cards = Card.find({ 'owner': owner }),
-		responseText = 'PROJECTS BY ' + owner + '\ngot ' + cards.count + ' cards';
+		responseText = 'PROJECTS BY ' + owner;
 
 	for (var i = cards.length - 1; i >= 0; i--) {
 		var card = cards[i];
@@ -68,7 +68,11 @@ app.get('/get_cards/:owner', function (req, res) {
 		responseText += card.toString();
 	};
 
-	res.send(responseText);
+	Card.find({ 'owner': owner }, function (err, cards) {
+		responseText += '\ngot ' + cards.length + ' cards'
+
+		res.send(responseText);
+	});
 });
 
 app.listen(port, function () {});
